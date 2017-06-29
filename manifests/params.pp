@@ -96,10 +96,10 @@ class dovecot::params {
 
   # General Settings
   $my_class = ''
-  $source = ''
-  $source_dir = ''
+  $source = undef
+  $source_dir = false
   $source_dir_purge = false
-  $template = ''
+  $template = undef
   $options = ''
   $service_autorestart = true
   $version = 'present'
@@ -119,6 +119,6 @@ class dovecot::params {
   $puppi_helper = 'standard'
   $debug = false
   $audit_only = false
-  $noops = undef
+  $noops = false
 
 }
