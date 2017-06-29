@@ -48,7 +48,7 @@ class dovecot::params {
   }
 
   $config_file = $::operatingsystem ? {
-    /(?i:Debian|Ubuntu|Mint)/ => '/etc/dovecot/dovecot.conf',
+    /(?i:Debian|Ubuntu|Mint|RedHat|CentOS|Scientific)/ => '/etc/dovecot/dovecot.conf',
     /(?i:FreeBSD)/            => '/usr/local/etc/dovecot/dovecot.conf',
     default                   => '/etc/dovecot.conf',
   }
