@@ -48,7 +48,7 @@ class dovecot::params {
   }
 
   $config_file = $::operatingsystem ? {
-    /(?i:Debian|Ubuntu|Mint)/ => '/etc/dovecot/dovecot.conf',
+    /(?i:Debian|Ubuntu|Mint|RedHat|CentOS|Scientific)/ => '/etc/dovecot/dovecot.conf',
     /(?i:FreeBSD)/            => '/usr/local/etc/dovecot/dovecot.conf',
     default                   => '/etc/dovecot.conf',
   }
@@ -96,10 +96,10 @@ class dovecot::params {
 
   # General Settings
   $my_class = ''
-  $source = ''
-  $source_dir = ''
+  $source = undef
+  $source_dir = false
   $source_dir_purge = false
-  $template = ''
+  $template = undef
   $options = ''
   $service_autorestart = true
   $version = 'present'
@@ -119,6 +119,6 @@ class dovecot::params {
   $puppi_helper = 'standard'
   $debug = false
   $audit_only = false
-  $noops = undef
+  $noops = false
 
 }
